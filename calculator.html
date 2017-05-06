@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Project1</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<style type="text/css">
+    .display{
+        margin-top: 20px;
+    }
+    #calculator input{
+        width:70px;
+        height:40px;
+    }
+    button{
+        float:right;
+        margin-right: 180px
+    }
+</style>
+<!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js">	-->
+</script>
+<script type="text/javascript">
+function c(val){
+    document.getElementById("display").value = val;
+}
+function math(val){
+    document.getElementById("display").value += val;
+}
+function e(){
+    try{
+        c(eval(document.getElementById("display").value));
+    }
+    catch(e){
+        c('Error')
+    }
+}
+</script>
+<body>
+<div class="container">
+    <div class="display">
+        <input type="text" name="" size="15" id="display" readonly>
+
+        <div class="keys">
+            <p>
+                <input type="button" class="button" value="=" onclick='c("not defined")'>
+                <input type="button" class="button" value="(" onclick='math("(")'>
+                <input type="button" class="button" value=")" onclick='math(")")'>
+                <input type="button" class="button" value="/" onclick='math("/")'>
+
+            </p>
+            <p>
+                <input type="button" class="button" value="7" onclick='math("7")'>
+                <input type="button" class="button" value="8" onclick='math("8")'>
+                <input type="button" class="button" value="9" onclick='math("9")'>
+                <input type="button" class="button" value="*" onclick='math("*")'>
+            </p>
+            <p>
+                <input type="button" class="button" value="4" onclick='math("4")'>
+                <input type="button" class="button" value="5" onclick='math("5")'>
+                <input type="button" class="button" value="6" onclick='math("6")'>
+                <input type="button" class="button" value="-" onclick='math("-")'>
+            </p>
+            <p>
+                <input type="button" class="button" value="1" onclick='math("1")'>
+                <input type="button" class="button" value="2" onclick='math("2")'>
+                <input type="button" class="button" value="3" onclick='math("3")'>
+                <input type="button" class="button" value="+" onclick='math("+")'>
+            </p>
+            <p>
+                <input type="button" class="button" value="0" onclick='math("0")'>
+                <input type="button" class="button" value="." onclick='math(".")'>
+                <input type="button" class="button" value="c" onclick='c("")'>
+                <input type="button" class="button" value="=" onclick='e("")'>
+            </p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+
+
+
